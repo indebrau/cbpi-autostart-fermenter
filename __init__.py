@@ -45,9 +45,8 @@ def init(cbpi):
         if not fermenter:
             log("No fermenter id [{}] could be found, skipping.".format(fid))
             continue
-        log("Toggling fermenter, Name: {}, CURRENT STATE: {}".format(fermenter.name, fermenter.state))
+        log("Toggling fermenter, Name: {}".format(fermenter.name))
         FermenterView().toggle(fid)
-        log("Toggling fermenter, Name: {}, CURRENT STATE: {}".format(fermenter.name, fermenter.state))
         if fermenter.state == True:
             log("Auto start fermenter [{}], id [{}] success!".format(fermenter.name, fid))
             cbpi.notify("auto_start_fermentation", "Auto start fermenter [{}], id [{}] success!".format(fermenter.name, fid), type="success", timeout=None)
